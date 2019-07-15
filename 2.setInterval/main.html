@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>定时器示例</title>
+	</head>
+	<body>
+  
+		<input type="text" id="result">
+  
+		<input type="button" value="开始" >
+		<input type="button" value="结束" >
+  
+		<script>
+		// write your code here
+		// ......
+		var startDate, stopDate;
+		function setStart(){
+			startDate = new Date();
+		};
+		function setStop(){
+			return new Date() - startDate;
+		};
+		document.getElementsByTagName('input')[1].onclick = function(){
+			setStart();
+		};
+		document.getElementsByTagName('input')[2].onclick = function(){
+			document.getElementsByTagName('input')[0].value = setStop() + 'ms';
+		};
+		</script>
+	</body>
+</html>
